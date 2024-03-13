@@ -1,0 +1,50 @@
+
+
+List Movies: Endpoint to list all movies available in the database.
+
+Method: GET
+URL: /api/getMovies/
+Retrieve Movie Details: Endpoint to retrieve details about a specific movie by its ID.
+
+Method: GET
+URL: /api/movies/<movie_id>/
+Search Movies: Endpoint to search for movies based on title or other search criteria.
+
+Method: GET
+URL: /api/movies/?search=<search_query>
+Filter Movies by Genre: Endpoint to filter movies based on genre.
+
+Method: GET
+URL: /api/movies/?genre=<genre_id>
+List Genres: Endpoint to list all genres available in the database.
+
+Method: GET
+URL: /api/getGenre/
+Retrieve Genre Details: Endpoint to retrieve details about a specific genre by its ID.
+
+Method: GET
+URL: /api/genres/<genre_id>/
+List Actors: Endpoint to list all actors available in the database.
+
+Method: GET
+URL: /api/getActors/
+Retrieve Actor Details: Endpoint to retrieve details about a specific actor by their ID.
+
+Method: GET
+URL: /api/actors/<actor_id>/
+List Directors: Endpoint to list all directors available in the database.
+
+Method: GET
+URL: /api/getDirectors/
+Retrieve Director Details: Endpoint to retrieve details about a specific director by their ID.
+
+Method: GET
+URL: /api/directors/<director_id>/
+Discover Related Movies: Endpoint to discover related movies based on cast (actors) or genre.
+
+Method: GET
+URL: /api/movies/related/?actor=<actor_id> or /api/movies/related/?genre=<genre_id>
+Create, Update, Delete Movie (Admin): Endpoints for administrators to create, update, and delete movies.
+
+Method: POST, PUT, DELETE
+URL: /api/movies/create/, /api/movies/<movie_id>/update/, /api/movies/<movie_id>/delete/
