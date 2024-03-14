@@ -290,30 +290,73 @@ def add_movie(request):
 
 
 @user_passes_test(user_in_specific_group)
+@csrf_exempt
 def delete_actor(request, id):
-    actor = Actor.objects.filter(id=id).first()
-    if actor is not None:
-        actor.delete()
-        return JsonResponse({'success': 'Actor deleted successfully'}, status=201)
+    if request.method == 'DELETE':
+        actor = Actor.objects.filter(id=id).first()
+        if actor is not None:
+            actor.delete()
+            return JsonResponse({'success': 'Actor deleted successfully'}, status=201)
+        else:
+            return JsonResponse({"error":f"Actor Not Found with id='{id}'"}, status=400)  
     else:
-        return JsonResponse({"error":f"Actor Not Found with id='{id}'"}, status=400)        
+        return JsonResponse({'error': 'Method not allowed'}, status=405)              
 
 
 @user_passes_test(user_in_specific_group)
+@csrf_exempt
 def delete_director(request, id):
-    director = Director.objects.filter(id=id).first()
-    if director is not None:
-        director.delete()
-        return JsonResponse({'success': 'Director deleted successfully'}, status=201)
+    if request.method == 'DELETE':
+        director = Director.objects.filter(id=id).first()
+        if director is not None:
+            director.delete()
+            return JsonResponse({'success': 'Director deleted successfully'}, status=201)
+        else:
+            return JsonResponse({"error":f"Director Not Found with id='{id}'"}, status=400) 
     else:
-        return JsonResponse({"error":f"Director Not Found with id='{id}'"}, status=400) 
+        return JsonResponse({'error': 'Method not allowed'}, status=405)        
 
 
 @user_passes_test(user_in_specific_group)
+@csrf_exempt
 def delete_genre(request, id):
-    genre = Genre.objects.filter(id=id).first()
-    if genre is not None:
-        genre.delete()
-        return JsonResponse({'success': 'Genre deleted successfully'}, status=201)
+    if request.method == 'DELETE':
+        genre = Genre.objects.filter(id=id).first()
+        if genre is not None:
+            genre.delete()
+            return JsonResponse({'success': 'Genre deleted successfully'}, status=201)
+        else:
+            return JsonResponse({"error":f"Genre Not Found with id='{id}'"}, status=400)   
     else:
-        return JsonResponse({"error":f"Genre Not Found with id='{id}'"}, status=400)         
+        return JsonResponse({'error': 'Method not allowed'}, status=405)              
+
+
+@user_passes_test(user_in_specific_group)
+@csrf_exempt
+def delete_movie_id(request, id):
+    if request.method == 'DELETE':
+        movie = Movie.objects.filter(id=id).first()
+        if movie is not None:
+            movie.delete()
+            return JsonResponse({'success': 'Movie deleted successfully'}, status=201)
+        else:
+            return JsonResponse({"error":f"Movie Not Found with id='{id}'"}, status=400) 
+    else:
+        return JsonResponse({'error': 'Method not allowed'}, status=405)
+
+
+@user_passes_test(user_in_specific_group)
+@csrf_exempt
+def delete_movie_name(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        if not title:
+            return JsonResponse({'error': 'Movie name is required'}, status=400)
+        if Movie.objects.filter(title=title).exists():
+            movie = Movie.objects.filter(title=title)
+            movie.delete() 
+            return JsonResponse({'success': f'Movie "{title}" deleted successfully'}, status=200)
+        else:
+            return JsonResponse({"error": f'Movie with name "{title}" does not exist'}, status=404)
+    else:
+        return JsonResponse({"error": "Method not allowed."}, status=405)

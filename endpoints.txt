@@ -1,0 +1,83 @@
+1. `/`: Home Page
+   - This route renders the home page of your application.
+
+2. `/getMovies`: Get All Movies
+   - This route returns a list of all movies available in the database.
+
+3. `/getActors`: Get All Actors
+   - This route returns a list of all actors available in the database.
+
+4. `/getDirectors`: Get All Directors
+   - This route returns a list of all directors available in the database.
+
+5. `/getGenre`: Get All Genres
+   - This route returns a list of all genres available in the database.
+
+6. `/movies/<int:id>`: Get Movie by ID
+   - This route returns details of a specific movie identified by its ID.
+
+7. `/directors/<int:id>`: Get Director by ID
+   - This route returns details of a specific director identified by its ID.
+
+8. `/actors/<int:id>`: Get Actor by ID
+   - This route returns details of a specific actor identified by its ID.
+
+9. `/genres/<int:id>`: Get Genre by ID
+   - This route returns details of a specific genre identified by its ID.
+
+10. `/movies/genre/<int:id>`: Filter Movies by Genre
+    - This route returns a list of movies filtered by a specific genre identified by its ID.
+
+11. `/movies/director/<int:id>`: Filter Movies by Director
+    - This route returns a list of movies filtered by a specific director identified by its ID.
+
+12. `/movies/actor/<int:id>`: Filter Movies by Actor
+    - This route returns a list of movies filtered by a specific actor identified by its ID.
+
+13. `/movies/under_imdb_rating/<int:num>`: Get Movies Under IMDb Rating
+    - This route returns a list of movies with IMDb ratings under a specified value.
+
+14. `/movies/above_imdb_rating/<int:num>`: Get Movies Above IMDb Rating
+    - This route returns a list of movies with IMDb ratings above a specified value.
+
+15. `/movies/equal_imdb_rating/<int:num>`: Get Movies with Equal IMDb Rating
+    - This route returns a list of movies with IMDb ratings equal to a specified value.
+
+16. `/movies/release_year/<int:year>`: Get Movies by Release Year
+    - This route returns a list of movies released in a specific year identified by the provided year.
+
+17. `/create_user`: Create User
+    - This route is used to create a new user in the system.
+
+18. `/handleLogin`: Handle Login
+    - This route is used to handle user login requests.
+
+19. `/handleLogout`: Handle Logout
+    - This route is used to handle user logout requests.
+
+20. `/add_actor`: Add Actor
+    - This route is used to add a new actor to the database.
+
+21. `/add_director`: Add Director
+    - This route is used to add a new director to the database.
+
+22. `/add_genre`: Add Genre
+    - This route is used to add a new genre to the database.
+
+23. `/add_movie`: Add Movie
+    - This route is used to add a new movie to the database.
+
+24. `/delete_actor/<int:id>`: Delete Actor by ID
+    - This route is used to delete a specific actor from the database identified by its ID.
+
+25. `/delete_director/<int:id>`: Delete Director by ID
+    - This route is used to delete a specific director from the database identified by its ID.
+
+26. `/delete_genre/<int:id>`: Delete Genre by ID
+    - This route is used to delete a specific genre from the database identified by its ID.
+
+27. `/delete_movie_id/<int:id>`: Delete Movie by ID
+    - This route is used to delete a specific movie from the database identified by its ID.
+
+28. `/delete_movie_name`: Delete Movie by Name
+    - This route is used to delete a specific movie from the database identified by its name.
