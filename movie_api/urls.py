@@ -45,5 +45,6 @@ urlpatterns = [
     path('add_movie', views.add_movie, name='add_movie'),
     path('delete_actor/<int:id>', views.delete_actor, name='delete_actor'),
     path('delete_director/<int:id>', views.delete_director, name='delete_director'),
+    path('delete_genre/<int:id>', views.delete_genre, name='delete_genre'),
 
 ]
