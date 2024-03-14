@@ -287,3 +287,13 @@ def add_movie(request):
         
     else:
         return JsonResponse({'error': 'Method not allowed'}, status=405)
+
+
+@user_passes_test(user_in_specific_group)
+def delete_actor(request, id):
+    actor = Actor.objects.filter(id=id).first()
+    if actor is not None:
+        actor.delete()
+        return JsonResponse({'success': 'Actor deleted successfully'}, status=201)
+    else:
+        return JsonResponse({"error":f"Actor Not Found with id='{id}'"}, status=400)        
