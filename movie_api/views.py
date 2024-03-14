@@ -297,3 +297,23 @@ def delete_actor(request, id):
         return JsonResponse({'success': 'Actor deleted successfully'}, status=201)
     else:
         return JsonResponse({"error":f"Actor Not Found with id='{id}'"}, status=400)        
+
+
+@user_passes_test(user_in_specific_group)
+def delete_director(request, id):
+    director = Director.objects.filter(id=id).first()
+    if director is not None:
+        director.delete()
+        return JsonResponse({'success': 'Director deleted successfully'}, status=201)
+    else:
+        return JsonResponse({"error":f"Director Not Found with id='{id}'"}, status=400) 
+
+
+@user_passes_test(user_in_specific_group)
+def delete_genre(request, id):
+    genre = Genre.objects.filter(id=id).first()
+    if genre is not None:
+        genre.delete()
+        return JsonResponse({'success': 'Genre deleted successfully'}, status=201)
+    else:
+        return JsonResponse({"error":f"Genre Not Found with id='{id}'"}, status=400)         

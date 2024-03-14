@@ -44,5 +44,6 @@ urlpatterns = [
     path('add_genre', views.add_genre, name='add_genre'),
     path('add_movie', views.add_movie, name='add_movie'),
     path('delete_actor/<int:id>', views.delete_actor, name='delete_actor'),
+    path('delete_director/<int:id>', views.delete_director, name='delete_director'),
 
 ]
