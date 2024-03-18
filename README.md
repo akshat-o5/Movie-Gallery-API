@@ -1,5 +1,5 @@
 ﻿# Movie-Gallery-API
- "Welcome to Movie Gallery API, your go-to source for accessing a vast collection of movies. Seamlessly browse through our extensive catalog, discover movie details, filter by genre, search by title, and explore related movies based on cast and genre. With user-friendly endpoints, our API empowers you to effortlessly retrieve movie information and enhance your movie-watching experience. Whether you're a movie enthusiast or a developer integrating movie data into your application, Movie Gallery API has you covered."
+ "Welcome to Movie Gallery API, your go-to source for accessing a vast collection of movies. Seamlessly browse through our extensive catalog, discover movie details, filter by genre, search by title, and explore related movies based on cast and genre. With user-friendly endpoints, our API empowers you to effortlessly retrieve movie information and enhance your movie-watching experience. Whether you're a movie enthusiast or a developer integrating movie data into your application, Movie Gallery API has you covered"
 
 ## Endpoints:
 1. `/`: Home Page
